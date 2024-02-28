@@ -9,4 +9,5 @@ export interface Usuario {
     telefono: string;
     rol?: string;
     fechaRegistro?: Date;
+    misCitas?: string[];
 }

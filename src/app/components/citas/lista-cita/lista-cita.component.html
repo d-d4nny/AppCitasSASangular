@@ -20,7 +20,7 @@
                 <tr *ngFor="let cita of citas">
                     <td>{{ cita.id }}</td>
                     <td>{{ cita.motivo }}</td>
-                    <td>{{ cita.fechaHora | date:'dd-MM-yyyy HH:mm' }}</td>
+                    <td>{{ cita.fechaHora | date: 'dd-MM-yyyy HH:mm:ss'  }}</td>
                     <td>{{ cita.estado }}</td>
                     <td>
                         <a [routerLink]="'/citas/detalle-cita/' + cita.id" role="button" class="btn buttonPrincipal">
