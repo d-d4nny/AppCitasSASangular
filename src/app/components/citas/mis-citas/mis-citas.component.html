@@ -1,0 +1,20 @@
+<div class="card bg-light cardPrincipal">
+    <div class="card-header border-bottom border-3">
+        <h3 class="subtituloSecundario">Mis Citas</h3>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title text-center text-danger" *ngIf="misCitas  &&misCitas.length === 0">No hay registro de ninguna cita</h5>
+        <div class="col-md-8 offset-md-2">
+            <div class="card mb-4" *ngFor="let cita of misCitas">                
+                <div class="card-body">
+                    <h4 class="textoPrincipal">Cita: {{ cita.id }}</h4>
+                    <br>
+                    <h6 class="card-title">{{ cita.estado }} {{ cita.fechaHora | date: 'dd-MM-yyyy HH:mm:ss' }}</h6>
+                    <p class="card-text">{{ cita.motivo }}</p>                    
+                </div>
+            </div>
+        </div>
+        <a routerLink="/citas/registro-cita/{{ usuarioActual?.id }}" class="btn buttonPrincipal"><i class="bi bi-file-text"> Nueva Cita</i></a>
+    </div>
+</div>
+

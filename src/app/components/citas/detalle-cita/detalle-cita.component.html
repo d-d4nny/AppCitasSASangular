@@ -1,0 +1,31 @@
+<!-- detalle-cita.component.html -->
+
+<div *ngIf="cita">
+    <h2>Detalles de la Cita</h2>
+    
+    <div>
+      <strong>Usuario ID:</strong> {{ cita.usuarioId }}
+    </div>
+    <div>
+      <strong>Doctor ID:</strong> {{ cita.doctorId }}
+    </div>
+    <div>
+      <strong>Motivo:</strong> {{ cita.motivo }}
+    </div>
+    <div>
+      <strong>Fecha y Hora:</strong> {{ cita.fechaHora | date:'medium' }}
+    </div>
+    <div>
+      <strong>Estado:</strong> {{ cita.estado }}
+    </div>
+  
+    <div>
+      <button *ngIf="cita.id && cita.fechaHora" (click)="cancelarCita(cita.id, cita.fechaHora)">Cancelar Cita</button>
+      <button *ngIf="cita.id && cita.fechaHora" (click)="completarCita(cita.id, cita.fechaHora)">Completar Cita</button>
+    </div>
+  </div>
+  
+  <div *ngIf="!cita">
+    <p>Cargando detalles de la cita...</p>
+  </div>
+  

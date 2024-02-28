@@ -1,0 +1,13 @@
+<!-- lista-doctores.component.html -->
+
+<h2>Listado de Doctores</h2>
+
+<ul>
+  <li *ngFor="let doctor of doctores">
+    {{ doctor.nombre }} - {{ doctor.especialidad }} - {{doctor.consulta}}
+  </li>
+</ul>
+
+<a [routerLink]="'/doctores/registro-doctor/'" role="button" class="btn buttonPrincipal">
+    <i class="bi bi-file-text"> Nuevo Doctor</i>
+</a>
