@@ -27,12 +27,13 @@ export class CitaService {
     return this.baseDatosServicio.actualizar('citas', cita);
   }
 
-  obtenerCitasPorIds(ids: string[]): Observable<Cita[]> {
+  obtenerCitasPorIds(id: string): Observable<Cita[]> {
+    console.log(id)
     return this.baseDatosServicio
       .obtenerTodos('citas')
       .pipe(
         map((citas: Cita[]) =>
-        citas.filter((cita) => ids.includes(cita.id!))
+        citas.filter((cita) => id.includes(cita.usuarioId!)        )
         )
       );
   }

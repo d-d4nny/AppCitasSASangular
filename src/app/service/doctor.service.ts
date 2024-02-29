@@ -30,7 +30,7 @@ export class DoctorService {
 
   async borrarDoctor(doctor: Doctor): Promise<void> {
     if (doctor.id) {
-      const citasDoctor = await this.citaService.obtenerCitasPorIds([doctor.id]).toPromise();
+      const citasDoctor = await this.citaService.obtenerCitasPorIds(doctor.id).toPromise();
   
       if (citasDoctor && citasDoctor.length === 0) {
         return this.baseDatosService.eliminar('doctores', doctor.id);

@@ -25,10 +25,12 @@ export class MisCitasComponent {
   obtenerMisCitas() {
     const usuarioActual = this.usuarioServicio.obtenerUsuarioDeLocalStorage();
     console.log('Usuario actual:', usuarioActual);
-    if (usuarioActual && usuarioActual.misCitas && usuarioActual.misCitas.length > 0) {
-      this.citaServicio.obtenerCitasPorIds(usuarioActual.misCitas).subscribe((citas: Cita[]) => {
+        
+    
+      this.citaServicio.obtenerCitasPorIds(usuarioActual.id).subscribe((citas: Cita[]) => {
         this.misCitas = citas;
       });
-    }
+    
+    console.log(this.misCitas);
   }
 }
